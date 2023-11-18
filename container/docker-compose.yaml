@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  dev:
+    build: ./docker
+    volumes:
+      - ..:/workspaces:cached
+    command: sleep infinity
+  php-fpm:
+    image: php:8.2.11-fpm-alpine3.18
+    working_dir: /var/www
+    volumes:
+      - ..:/var/www
+      - ./config/php:/usr/local/etc/php/conf.d
+  nginx:
+    image: nginx:1.25.2-alpine3.18-slim
+    ports:
+      - 8000:80
+    volumes:
+      - ..:/var/www
+      - ./config/nginx:/etc/nginx/conf.d

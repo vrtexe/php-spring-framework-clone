@@ -1,0 +1,19 @@
+{
+    "name": "vangel/project",
+    "type": "projec",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vangel\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Traykovski",
+            "email": "traykovski5@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    }
+}
